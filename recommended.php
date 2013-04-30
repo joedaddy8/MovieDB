@@ -42,35 +42,19 @@ function printRecommendedMovieList($query)
 	
 	$result = mysql_query($query);
 	if(! $result){
-	echo "Error!";
+		echo "Error!";
 	}
 	else {
 
-	
-	for($i=1;$i<6;$i++){
+		echo "<table><tr><th>Title</th><th># of Ratings</th><th>Average Rating</th></tr>";
+	        for($i=1;$i<51;$i++){
 		$row = mysql_fetch_array($result);
 		//echo "<img src='http://en.wikipedia.org/wiki/File:$row[0].jpg'></img>";
-		echo "$i.<a href='http://cs445.cs.umass.edu/php-wrapper/cs445_7_s13/movie.php?title=$row[0]&year=$row[1]'>$row[0] ($row[1])</a>";
-		echo "<br>";
+		echo "<td>$i.<a href='http://cs445.cs.umass.edu/php-wrapper/cs445_7_s13/movie.php?title=$row[0]&year=$row[1]'>$row[0] ($row[1])</a></td>";
+		echo "<td>$row[2]</td>";
+		echo "<td>$row[3]</td></tr>";
+		}
 	}
-	
-//	$result = array_slice($result, 0, 5);	
-
-//	$i = 0;
-//	while($row = mysql_fetch_array($result))
-//	{
-//	$i++;
-//	$row = $result;
-//		echo ".<a href='http://cs445.cs.umass.edu/php-wrapper/cs445_7_s13/movie.php?title=$row[1]&year=$row[0]'>$row[1] ($row[0])</a>";
-//		echo "<br>";
-//		if($i == 5){
-//			break;
-//		}
-	}
-
-
-
-
 }
 
 ?>

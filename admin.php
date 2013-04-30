@@ -43,12 +43,12 @@
 		die ("Couldn't connect to mysql server!<br>The error was: " . mysql_error());
 	}
 	else{
-		echo("Connection successful!<br>\n");
+		//echo("Connection successful!<br>\n");
 	}
 	if (!mysql_select_db("dmo"))
 		die ("Couldn't select a database!<br> Error: " . mysql_error());
 	else
-		echo "Database selected successfully.<br>\n";
+		//echo "Database selected successfully.<br>\n";
  
 ?>
 <h1>SQL Query Interface</h1>
